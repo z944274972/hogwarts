@@ -5,6 +5,7 @@
 # @File     :  test_parametrize.py
 
 import pytest
+import os
 
 
 def add_function(a, b):
@@ -25,4 +26,6 @@ class Test_demo:
         print("测试数据组合：a->%s,b->%s" %(a,b))
 
 if __name__ == '__main__':
-    pytest.main(["-s","-q"])
+    pytest.main(["-s""-q", "--alluredir", "./result"])
+    os.system("allure generate ./result -o ./report --clean")
+    os.system("allure open -h 127.0.0.1 -p 8883 ./report")
