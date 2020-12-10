@@ -10,7 +10,6 @@ import yaml
 
 class TestCalculator:
 
-
     def setup_class(self):
         self.cal = Calculator()
         print("计算开始")
@@ -18,19 +17,20 @@ class TestCalculator:
     def teardown_class(self):
         print("计算结束")
 
-    @pytest.mark.parametrize("a,b,expected",yaml.safe_load(open("./yaml/cal.yal")))
+
+    @pytest.mark.parametrize("a,b,expected",yaml.safe_load(open("./yaml/cal.yal"))["add"])
     def test_add(self,a,b,expected):
         assert expected ==self.cal.add(a,b)
 
-    @pytest.mark.parametrize("a,b,expected", [(1, 2, -1), (1, 3, -2)])
+    @pytest.mark.parametrize("a,b,expected", yaml.safe_load(open("./yaml/cal.yal"))["jian"])
     def test_jia(self, a, b, expected):
         assert expected == self.cal.jian(a, b)
 
-    @pytest.mark.parametrize("a,b,expected",[(1,2,2),(1,3,3)])
+    @pytest.mark.parametrize("a,b,expected", yaml.safe_load(open("./yaml/cal.yal"))["cheng"])
     def test_cheng(self,a,b,expected):
         assert expected ==self.cal.cheng(a,b)
 
-    @pytest.mark.parametrize("a,b,expected",[(1,2,0.5),(1,4,0.25)])
+    @pytest.mark.parametrize("a,b,expected", yaml.safe_load(open("./yaml/cal.yal"))["chu"])
     def test_chu(self,a,b,expected):
         assert expected ==self.cal.chu(a,b)
 
