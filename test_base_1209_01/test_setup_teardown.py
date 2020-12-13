@@ -34,6 +34,7 @@ class TestClass():
 
     # 方法级别
     def setup_method(self):
+        assert 1==1
         print("setup:每个用例开始执行")
 
     def teardown_method(self):
