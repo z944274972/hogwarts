@@ -10,6 +10,9 @@ import os
 import allure
 from test_base_1209_01.pythoncode.calculator import  Calculator
 
+
+
+
 def get_datas(path,data=None,ids=None):
     with open(path) as f:
         datas = yaml.safe_load(f)
@@ -30,9 +33,12 @@ class TestCalculator:
     def teardown_class(self):
         print("计算结束")
 
-    @allure.feature("加法")
-    @allure.title("加法case")
-    @pytest.mark.parametrize("a,b,expected", get_datas("yaml/cal.yml","add")[0],ids=get_datas("yaml/cal.yml",ids="myid_add")[1])
+
+
+
+
+    @pytest.mark.parametrize("a,b,expected", get_datas("yaml/cal.yml","add")[0],ids=get_datas("yaml/cal.yml",ids="myid")[1])
+
     def test_add(self,a,b,expected,myfixture):
         with allure.step("进行加法计算"):
             assert expected ==myfixture.add(a,b)
@@ -59,8 +65,11 @@ class TestCalculator:
             assert expected ==myfixture.chu(a,b)
 
 
+
 if __name__ == '__main__':
     pytest.main(["-s","-q","--alluredir","./result"])
     os.system("allure generate ./result -o ./report --clean")
     os.system("allure open -h 127.0.0.1 -p 8883 ./report")
+    os.system("allure open -h 127.0.0.1 -p 8883 ./report")
     # pytest.main(["-sq"])
+
