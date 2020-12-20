@@ -3,8 +3,7 @@
 # @Author   :  zhangyuxin
 # @Email    :  zhangyuxin.aikebo@bytedance.com
 # @File     :  test_fuyong.py
-
-
+import time
 
 import pytest
 import yaml
@@ -45,6 +44,7 @@ class TestFuyong:
         driver = webdriver.Chrome(options=opt)
         driver.implicitly_wait(5)
         driver.get("https://work.weixin.qq.com/wework_admin/frame#contacts")
+        time.sleep(10 )
         cookie = driver.get_cookies()
         print(cookie)
         with open("./cookie.yml","w",encoding="utf-8") as f:
@@ -58,7 +58,11 @@ class TestFuyong:
         with open("cookie.yml", encoding="UTF-8") as f:
             yaml_data = yaml.safe_load(f)
             for cookie in yaml_data:
+                if "expiry" in cookie.keys():
+                    del cookie["expiry"]
                 driver.add_cookie(cookie)
-        driver.get("https://work.weixin.qq.com/wework_admin/frame#contacts")
+        driver.get("https://work.weixin.qq.com/wework_admin/frame#index")
+        time.sleep(10)
+
 
 
