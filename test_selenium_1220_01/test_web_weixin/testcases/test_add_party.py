@@ -12,8 +12,8 @@ class TestAddMember:
     def setup_class(self):
         self.main = MainPage()
 
-    # def teardown_class(self):
-    #     self.main.quit()
+    def teardown_class(self):
+        self.main.quit()
 
     def test_add_party(self):
 

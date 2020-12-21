@@ -20,7 +20,7 @@ class ContactPage(BasePage):
     # _location_select_name = (By.CSS_SELECTOR,'.js_party_list_container .jstree-clicked')
     _location_select_name = (By.XPATH,'//form//a[@class="jstree-anchor" and text()="cici"]')
     # _location_sure = (By.CSS_SELECTOR,".ww_btn_Blue")
-    _location_sure = (By.CSS_SELECTOR, "a.qui_btn.ww_btn.ww_btn_Blue[d_ck='submit']")
+    _location_sure = (By.CSS_SELECTOR, '.ww_dialog_foot .ww_btn_Blue')
     _location_party_list = (By.CSS_SELECTOR,".jstree-container-ul .jstree-children .jstree-anchor")
     def goto_add_member(self):
         '''添加成员'''

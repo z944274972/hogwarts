@@ -16,6 +16,10 @@ class BasePage:
 
         base_driver : WebDriver
         if base_driver is None:
+            # 无浏览器运行
+            # opt = webdriver.ChromeOptions()
+            # opt.add_argument(argument="--headless")
+            # self.driver = webdriver.Chrome(options=opt)
             self.driver = webdriver.Chrome()
             self.driver.maximize_window()
             self.driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx?")
