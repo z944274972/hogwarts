@@ -51,6 +51,10 @@ class BasePage:
     def quit(self):
         self.driver.quit()
 
-    def wait(self,locator):
+    def wait_click(self,locator):
 
-        return WebDriverWait(self.driver,10).until(ec.element_to_be_clickable(locator))
+        return WebDriverWait(self.driver,15).until(ec.element_to_be_clickable(locator))
+
+    def wait_find(self,locator):
+
+        return WebDriverWait(self.driver,15).until(ec.presence_of_all_elements_located(locator))

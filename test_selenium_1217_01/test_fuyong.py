@@ -37,7 +37,7 @@ class TestFuyong:
         driver.get("https://work.weixin.qq.com/wework_admin/frame")
         driver.quit()
 
-    # 获取cookie，序列化后存入yaml文件内
+    # 获取cookie，序列化后存入yaml文件内cookie.yml
     def test_write_yaml(self):
         opt = webdriver.ChromeOptions()
         opt.debugger_address = "127.0.0.1:9222"
