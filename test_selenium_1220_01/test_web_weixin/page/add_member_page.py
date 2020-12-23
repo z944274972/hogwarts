@@ -2,7 +2,7 @@
 # @Time     :  2020/12/20 14:41
 # @Author   :  zhangyuxin
 # @Email    :  zhangyuxin.aikebo@bytedance.com
-# @File     :  add_member.py
+# @File     :  add_member_page.py
 from selenium.webdriver.common.by import By
 
 from test_selenium_1220_01.test_web_weixin.page.base_page import BasePage
