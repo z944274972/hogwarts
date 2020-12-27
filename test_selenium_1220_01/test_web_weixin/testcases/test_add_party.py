@@ -19,6 +19,6 @@ class TestAddMember:
 
         '''添加部门测试用例'''
 
-        party_list = self.main.goto_contact().add_party()
+        party_list = self.main.goto_contact().add_party().add_party()
 
         assert "zhuolang" in party_list

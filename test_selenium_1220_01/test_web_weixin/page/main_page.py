@@ -5,7 +5,7 @@
 # @File     :  main_page.py
 from selenium.webdriver.common.by import By
 
-from test_selenium_1220_01.test_web_weixin.page.add_member import AddMember
+from test_selenium_1220_01.test_web_weixin.page.add_member_page import AddMember
 from test_selenium_1220_01.test_web_weixin.page.base_page import BasePage
 from test_selenium_1220_01.test_web_weixin.page.contact_page import ContactPage
 

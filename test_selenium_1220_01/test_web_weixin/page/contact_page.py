@@ -15,16 +15,10 @@ class ContactPage(BasePage):
     _location_goto_add_member= (By.CSS_SELECTOR, ".ww_operationBar .js_add_member")
     _location_add = (By.CSS_SELECTOR,".member_colLeft_top_addBtnWrap")
     _location_add_party = (By.CSS_SELECTOR,".js_create_party")
-    _location_party_name = (By.CSS_SELECTOR,'.member_tag_dialog_inputDlg input[name="name"]')
-    _location_select_party = (By.CSS_SELECTOR,".js_toggle_party_list")
-    # _location_select_name = (By.CSS_SELECTOR,'.js_party_list_container .jstree-clicked')
-    _location_select_name = (By.XPATH,'//form//a[@class="jstree-anchor" and text()="cici"]')
-    # _location_sure = (By.CSS_SELECTOR,".ww_btn_Blue")
-    _location_sure = (By.CSS_SELECTOR, '.ww_dialog_foot .ww_btn_Blue')
-    _location_party_list = (By.CSS_SELECTOR,".jstree-container-ul .jstree-children .jstree-anchor")
+
     def goto_add_member(self):
         '''添加成员'''
-        from test_selenium_1220_01.test_web_weixin.page.add_member import AddMember
+        from test_selenium_1220_01.test_web_weixin.page.add_member_page import AddMember
         self.wait_click(self._location_goto_add_member)
         self.find(self._location_goto_add_member).click()
         return AddMember(self.driver)
@@ -46,17 +40,11 @@ class ContactPage(BasePage):
 
     def add_party(self):
         '''添加部门'''
+        from test_selenium_1220_01.test_web_weixin.page.add_party_page import AddParty
         self.find(self._location_add).click()
         self.find(self._location_add_party).click()
-        self.find(self._location_party_name).send_keys("zhuolang")
-        self.find(self._location_select_party).click()
-        self.wait_click(self._location_select_name)
-        self.find(self._location_select_name).click()
-        self.find(self._location_sure).click()
-        time.sleep(1)
-        elements = self.finds(*self._location_party_list)
-        party_list = [i.text for i in elements]
-        return party_list
+        return AddParty(self.driver)
+
 
 
 
