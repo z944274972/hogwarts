@@ -1,0 +1,3 @@
+- find: //*[@resource-id='com.xueqiu.android:id/action_search']
+  type: xpath
+  action: find_click

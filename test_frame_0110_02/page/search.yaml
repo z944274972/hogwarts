@@ -1,0 +1,4 @@
+- find: //*[@resource-id='com.xueqiu.android:id/search_input_text']
+  type: xpath
+  action: send
+  data: 阿里巴巴
