@@ -48,5 +48,5 @@ def myfixture_None():
 
 # pytest-xdist  pytest -n 3 执行
 
-# pytest,mark.run(order=1)  装饰器
-# pytest-ording
+# pytest.mark.run(order=1)  装饰器
+# pytest-ordering

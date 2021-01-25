@@ -9,12 +9,12 @@ from mitmproxy import http
 
 
 class Counter:
-    def request(flow: http.HTTPFlow) -> None:
+    def request(self,flow: http.HTTPFlow) -> None:
         if "baidu" in flow.request.pretty_url :
             flow.response = http.HTTPResponse.make(
                 200,  # (optional) status code
-                b"xiix",  # (optional) content
-                {"Content-Type": "text/html"}  # (optional) headers
+                "xiix",  # (optional) content
+                {"Content-Type": "application/json"}  # (optional) headers
             )
 
 addons = [
