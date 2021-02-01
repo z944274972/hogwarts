@@ -1,0 +1,13 @@
+- domain: 172.28.31.3
+  httpOnly: false
+  name: csrf_token
+  path: /
+  secure: false
+  value: ImM2YjQzMmQ5YzY5NGMzNGI0YTYzMTczZmQ3NDUxZGQ0ZGUxNGFjZTMi.YBdkBw.MlDIZvfsfE1nd28g1QX_WA00b4w
+- domain: 172.28.31.3
+  expiry: 1612232070
+  httpOnly: true
+  name: session
+  path: /
+  secure: false
+  value: ed6ec71d-568e-460e-954f-f106eff68751

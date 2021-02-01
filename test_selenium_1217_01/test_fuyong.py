@@ -44,7 +44,7 @@ class TestFuyong:
         driver = webdriver.Chrome(options=opt)
         driver.implicitly_wait(5)
         driver.get("https://work.weixin.qq.com/wework_admin/frame#contacts")
-        time.sleep(10 )
+        time.sleep(10)
         cookie = driver.get_cookies()
         print(cookie)
         with open("./cookie.yml","w",encoding="utf-8") as f:
