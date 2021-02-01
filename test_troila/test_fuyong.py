@@ -40,3 +40,4 @@ class TestFuyong:
 				driver.add_cookie(cookie)
 		driver.get("http://172.28.31.3/admin/defense-manage?activity_type=cad")
 		time.sleep(5)
+
