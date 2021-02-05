@@ -10,9 +10,6 @@ import os
 import allure
 from test_base_1209_01.pythoncode.calculator import  Calculator
 
-
-
-
 def get_datas(path,data=None,ids=None):
     with open(path) as f:
         datas = yaml.safe_load(f)
