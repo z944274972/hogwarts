@@ -5,7 +5,11 @@
 # @File    : test_demo
 # @Project : hogwarts
 
+# import sys
+# sys.path.append(r"D:\PycharmProjects\hogwarts")
+
 import pytest
+
 class TestDemo:
 
     def setup_class(self):
@@ -15,7 +19,7 @@ class TestDemo:
         print("计算结束")
 
     def test_add(self):
-        assert 1 == 0
+        assert 1 == 1
 
 if __name__ == '__main__':
     pytest.main()
