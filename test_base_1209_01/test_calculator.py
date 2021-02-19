@@ -32,7 +32,7 @@ class TestCalculator:
 
     @allure.feature("加法")
     @allure.title("加法case")
-    @pytest.mark.parametrize("a,b,expected", get_datas("yaml/cal.yml","add")[0],ids=get_datas("yaml/cal.yml",ids="myid")[1])
+    @pytest.mark.parametrize("a,b,expected", get_datas("yaml/cal.yml","add")[0],ids=get_datas("yaml/cal.yml",ids="myid_add")[1])
     def test_add(self,a,b,expected,myfixture):
         with allure.step("进行加法计算"):
             assert expected ==myfixture.add(a,b)

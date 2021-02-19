@@ -61,5 +61,15 @@
 #     log = Logger('error.log', level='error')
 #     log.logger.error('报错')
 #     log.logger.critical('严重')
+# import os
+#
+#
+# if __name__ == '__main__':
+#
+# 	if os.path.exists('all.log'):
+# 		os.remove("all.log")
+#
+# 	if os.path.exists('error.log'):
+# 		os.remove("error.log")
 
 
